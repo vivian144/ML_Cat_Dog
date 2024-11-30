@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat or Dog Classifier</title>
+</head>
+<body>
+    <h1>Upload an Image to Classify</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" accept="image/*" required><br><br>
+        <button type="submit">Classify</button>
+    </form>
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
